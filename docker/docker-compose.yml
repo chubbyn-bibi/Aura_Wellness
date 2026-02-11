@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  playwright-tests:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    environment:
+      BASE_URL: https://www.saucedemo.com
+      USERNAME: standard_user
+      PASSWORD: secret_sauce
+    volumes:
+      - ../test-results:/app/test-results
